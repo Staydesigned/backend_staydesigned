@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "enable_buy_designs",
+  "info": {
+    "singularName": "enable-buy-design",
+    "pluralName": "enable-buy-designs",
+    "displayName": "enable-buy-design",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "isEnabled": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "buy_designs",
+  "info": {
+    "singularName": "buy-design",
+    "pluralName": "buy-designs",
+    "displayName": "buy-design"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

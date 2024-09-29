@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "designs",
+  "info": {
+    "singularName": "design",
+    "pluralName": "designs",
+    "displayName": "design",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "short_description": {
+      "type": "text",
+      "required": true
+    },
+    "avatar_img": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "long_description1": {
+      "type": "text",
+      "required": true
+    },
+    "long_description2": {
+      "type": "text",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "furnitureandlighting",
+        "decor",
+        "glassdoor",
+        "textiles",
+        "featureddesigns"
+      ],
+      "required": true
+    },
+    "price": {
+      "type": "float",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_page_datas",
+  "info": {
+    "singularName": "home-page-data",
+    "pluralName": "home-page-datas",
+    "displayName": "home-page-data"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slider_images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+# Node.js dependencies
+node_modules/
+yarn-error.log
+npm-debug.log
+
+# Build outputs
+.build/
+dist/
+
+# Strapi specific files
+/.tmp/
+/build/
+/uploads/
+database.sqlite
+config/plugins.js
+config/server.js
+config/middlewares.js
+config/env/*
+!.env.example  # Keep the example environment file
+/.env          # Exclude actual environment files
+
+# Logs
+logs/
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.idea/
+.vscode/

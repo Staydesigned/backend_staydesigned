@@ -788,36 +788,6 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiBuyDesignBuyDesign extends Schema.CollectionType {
-  collectionName: 'buy_designs';
-  info: {
-    singularName: 'buy-design';
-    pluralName: 'buy-designs';
-    displayName: 'buy-design';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::buy-design.buy-design',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::buy-design.buy-design',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiDesignDesign extends Schema.CollectionType {
   collectionName: 'designs';
   info: {
@@ -896,6 +866,103 @@ export interface ApiEnableBuyDesignEnableBuyDesign extends Schema.SingleType {
   };
 }
 
+export interface ApiHomePageDataHomePageData extends Schema.SingleType {
+  collectionName: 'home_page_datas';
+  info: {
+    singularName: 'home-page-data';
+    pluralName: 'home-page-datas';
+    displayName: 'home-page-data';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slider_images: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    description: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page-data.home-page-data',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page-data.home-page-data',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOurClientOurClient extends Schema.CollectionType {
+  collectionName: 'our_clients';
+  info: {
+    singularName: 'our-client';
+    pluralName: 'our-clients';
+    displayName: 'Our Client';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    client_name: Attribute.String;
+    logo_image: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::our-client.our-client',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::our-client.our-client',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOurTeamOurTeam extends Schema.CollectionType {
+  collectionName: 'our_teams';
+  info: {
+    singularName: 'our-team';
+    pluralName: 'our-teams';
+    displayName: 'Our team';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.String;
+    profile_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::our-team.our-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::our-team.our-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -914,9 +981,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::buy-design.buy-design': ApiBuyDesignBuyDesign;
       'api::design.design': ApiDesignDesign;
       'api::enable-buy-design.enable-buy-design': ApiEnableBuyDesignEnableBuyDesign;
+      'api::home-page-data.home-page-data': ApiHomePageDataHomePageData;
+      'api::our-client.our-client': ApiOurClientOurClient;
+      'api::our-team.our-team': ApiOurTeamOurTeam;
     }
   }
 }

@@ -835,6 +835,72 @@ export interface ApiDesignDesign extends Schema.CollectionType {
   };
 }
 
+export interface ApiDesignServicesImageDesignServicesImage
+  extends Schema.SingleType {
+  collectionName: 'design_services_images';
+  info: {
+    singularName: 'design-services-image';
+    pluralName: 'design-services-images';
+    displayName: 'design_services_image';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hardgoods_and_textiles: Attribute.Media<'images'> & Attribute.Required;
+    trend_analysis: Attribute.Media<'images'> & Attribute.Required;
+    design_offers: Attribute.Media<'images'> & Attribute.Required;
+    prototyping_and_visualisation: Attribute.Media<'images'> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::design-services-image.design-services-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::design-services-image.design-services-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDigitalPresenceDigitalPresence extends Schema.SingleType {
+  collectionName: 'digital_presences';
+  info: {
+    singularName: 'digital-presence';
+    pluralName: 'digital-presences';
+    displayName: 'digital_presence';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    linkedin_url: Attribute.String & Attribute.Required;
+    instagram_url: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::digital-presence.digital-presence',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::digital-presence.digital-presence',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiEnableBuyDesignEnableBuyDesign extends Schema.SingleType {
   collectionName: 'enable_buy_designs';
   info: {
@@ -893,6 +959,75 @@ export interface ApiHomePageDataHomePageData extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::home-page-data.home-page-data',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiInfrastructureImageInfrastructureImage
+  extends Schema.SingleType {
+  collectionName: 'infrastructure_images';
+  info: {
+    singularName: 'infrastructure-image';
+    pluralName: 'infrastructure-images';
+    displayName: 'infrastructure_image';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    office_space_image: Attribute.Media<'images'> & Attribute.Required;
+    digital_presence_image: Attribute.Media<'images'> & Attribute.Required;
+    about_us_image: Attribute.Media<'images'> & Attribute.Required;
+    whowhatwhy_image: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::infrastructure-image.infrastructure-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::infrastructure-image.infrastructure-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOtherServicesImageOtherServicesImage
+  extends Schema.SingleType {
+  collectionName: 'other_services_images';
+  info: {
+    singularName: 'other-services-image';
+    pluralName: 'other-services-images';
+    displayName: 'other_services_image';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    floating_designers: Attribute.Media<'images'> & Attribute.Required;
+    exclusive_designers: Attribute.Media<'images'> & Attribute.Required;
+    curation_support: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    development_support: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::other-services-image.other-services-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::other-services-image.other-services-image',
       'oneToOne',
       'admin::user'
     > &
@@ -963,6 +1098,38 @@ export interface ApiOurTeamOurTeam extends Schema.CollectionType {
   };
 }
 
+export interface ApiStatsStats extends Schema.SingleType {
+  collectionName: 'statss';
+  info: {
+    singularName: 'stats';
+    pluralName: 'statss';
+    displayName: 'stats';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    yearsOfExperience: Attribute.Integer & Attribute.Required;
+    clientsAndProjects: Attribute.Integer & Attribute.Required;
+    highlightProjects: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::stats.stats',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::stats.stats',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -982,10 +1149,15 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::design.design': ApiDesignDesign;
+      'api::design-services-image.design-services-image': ApiDesignServicesImageDesignServicesImage;
+      'api::digital-presence.digital-presence': ApiDigitalPresenceDigitalPresence;
       'api::enable-buy-design.enable-buy-design': ApiEnableBuyDesignEnableBuyDesign;
       'api::home-page-data.home-page-data': ApiHomePageDataHomePageData;
+      'api::infrastructure-image.infrastructure-image': ApiInfrastructureImageInfrastructureImage;
+      'api::other-services-image.other-services-image': ApiOtherServicesImageOtherServicesImage;
       'api::our-client.our-client': ApiOurClientOurClient;
       'api::our-team.our-team': ApiOurTeamOurTeam;
+      'api::stats.stats': ApiStatsStats;
     }
   }
 }

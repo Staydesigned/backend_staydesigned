@@ -1,0 +1,47 @@
+{
+  "kind": "singleType",
+  "collectionName": "design_services_images",
+  "info": {
+    "singularName": "design-services-image",
+    "pluralName": "design-services-images",
+    "displayName": "design_services_image"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hardgoods_and_textiles": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "trend_analysis": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "design_offers": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "prototyping_and_visualisation": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

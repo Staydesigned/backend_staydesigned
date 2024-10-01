@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "digital_presences",
+  "info": {
+    "singularName": "digital-presence",
+    "pluralName": "digital-presences",
+    "displayName": "digital_presence"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "linkedin_url": {
+      "type": "string",
+      "required": true
+    },
+    "instagram_url": {
+      "type": "string"
+    }
+  }
+}

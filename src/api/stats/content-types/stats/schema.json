@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "statss",
+  "info": {
+    "singularName": "stats",
+    "pluralName": "statss",
+    "displayName": "stats"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "yearsOfExperience": {
+      "type": "integer",
+      "required": true
+    },
+    "clientsAndProjects": {
+      "type": "integer",
+      "required": true
+    },
+    "highlightProjects": {
+      "type": "integer"
+    }
+  }
+}

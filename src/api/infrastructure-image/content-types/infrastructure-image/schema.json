@@ -20,7 +20,7 @@
         "images"
       ]
     },
-    "digital_presence_image": {
+    "tech_support_image": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -37,12 +37,12 @@
       ]
     },
     "whowhatwhy_image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

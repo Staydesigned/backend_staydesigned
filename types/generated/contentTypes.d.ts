@@ -980,7 +980,7 @@ export interface ApiInfrastructureImageInfrastructureImage
   };
   attributes: {
     office_space_image: Attribute.Media<'images'> & Attribute.Required;
-    digital_presence_image: Attribute.Media<'images'> & Attribute.Required;
+    tech_support_image: Attribute.Media<'images'> & Attribute.Required;
     about_us_image: Attribute.Media<'images'> & Attribute.Required;
     whowhatwhy_image: Attribute.Media<'images'> & Attribute.Required;
     createdAt: Attribute.DateTime;

@@ -810,7 +810,7 @@ export interface ApiDesignDesign extends Schema.CollectionType {
       [
         'furnitureandlighting',
         'decor',
-        'glassdoor',
+        'glassware',
         'textiles',
         'featureddesigns'
       ]
